@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600;800&display=swap");
+
+:root {
+  --ff-primary: "Nunito Sans";
+  --fw-100: 300;
+  --fw-200: 600;
+  --fw-300: 800;
+}
+
+/* 
+----CSS custom properties
+bg-main----background color
+
+font-weight-100 = 300
+font-weight-200 = 600
+font-weight-300 = 800
+
+font family - nunito sans
+ */
+
+/* CSS Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+#root {
+  min-height: 100svh;
+  font-family: var(--ff-primary);
+}
+
+button {
+  outline: 0 solid transparent;
+  border: 0 solid transparent;
+}
+
+input {
+    font-family: inherit;
+    color: inherit;
+    border: 0 solid transparent;
+    outline: 0 solid transparent;
+}
+
+/*-------------------  */
+/*-- Utility classes-- */
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.sr-only {
+  clip-path: circle(0);
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.fw-100 {
+  font-weight: var(--fw-100);
+}
+
+.fw-200 {
+  font-weight: var(--fw-200);
+}
+
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* ----Component Styling ---*/
+/* Top section Stuffs*/
+.navbar {
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.navbar__theme-toggler {
+  background-color: transparent;
+}
+
+.navigation {
+  justify-content: space-between;
+  margin-block-end: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.navigation__input {
+    width: 100%;
+    padding: .5rem 1.5rem;
+    background-color: transparent;
+}
+
+.navigation__filterbox {
+    width: 10rem;
+    border-radius: 5px;
+}
+
+.navigation__searchbar {
+    width: 20rem;
+    border-radius: 5px;
+}
+
+/* ---------------- */
+
+.main {
+  padding: 2rem;
+}
+
+/*--- Card Styling ---*/
+.container-card {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.card {
+    border-radius: 5px;
+}
+
+.card__section {
+  width: 100%;
+}
+
+.container-flag {
+  height: 50%;
+}
+
+.card__caption {
+  padding: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__country-information {
+  gap: 0.2rem;
+  flex-direction: column;
+}
