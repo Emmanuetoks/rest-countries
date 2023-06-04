@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600;800&display=swap");
 
 :root {
-  --ff-primary: "Nunito Sans";
+  --ff-primary: 'Nunito Sans';
   --fw-100: 300;
   --fw-200: 600;
   --fw-300: 800;

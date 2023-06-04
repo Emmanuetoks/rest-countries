@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const NavBar = () => {
   const changeTheme = () => {
     const root = document.getElementById("root");
