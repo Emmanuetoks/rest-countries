@@ -8,7 +8,7 @@ import "../CSS/themes.css";
 
 function App() {
   const [countries, setCountries] = useState(null);
-  const [updateCard, setUpdateCard] = useState(null)
+  const [updateCard, setUpdateCard] = useState(null);
 
   // Get data from local json file;
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
         const res = await fetch("../data.json");
         const data = await res.json();
         setCountries(data);
-        setUpdateCard(data)
+        setUpdateCard(data);
       } catch (error) {
         console.log(error);
       }
@@ -27,8 +27,6 @@ function App() {
     fetchCountryData();
     return () => (ignore = true);
   }, []);
-
-  document.getElementById("root").classList = "dark-mode";
   return (
     <>
       <CountryData.Provider value={[countries, setUpdateCard]}>
@@ -53,10 +51,20 @@ function App() {
                   capital={country.capital}
                 />
               ))}
+            {updateCard && updateCard.length === 0 ? <ResultError /> : ""}
           </div>
         </main>
       </CountryData.Provider>
     </>
+  );
+}
+
+function ResultError() {
+  return (
+    <div className="place-self-center text-align-center ">
+      <h2 className="text-accent-200 fw-300">No Results</h2>
+      <p className="text-accent-100 fw-100">Check your spelling</p>
+    </div>
   );
 }
 
