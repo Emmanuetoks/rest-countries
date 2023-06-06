@@ -14,11 +14,13 @@ import {
 function App() {
   const [countries, setCountries] = useState(null);
   const [currentCards, setCurrentCards] = useState(null);
+  const [theme, setTheme] = useState("dark");
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<Home currentCards={currentCards} />} />
-        <Route path="country/:id" element={<Country />} />
+        <Route path="/" element={<Home currentCards={currentCards} theme={theme}/>} />
+        <Route path="country/:id" element={<Country theme={theme}/>} />
       </>
     )
   );
@@ -43,32 +45,28 @@ function App() {
 
   useEffect(() => {
     const root = document.querySelector("#root");
-    const filterBox = document.querySelector('.navigation__datalist');
+    const filterBox = document.querySelector(".navigation__datalist");
 
-    console.log(filterBox);
     root.addEventListener("click", (e) => {
-      console.log(e.target);
       if (
         e.target.classList.contains("navigation__filterbox") ||
         e.target.classList.contains("navigation__input")
       ) {
-        console.log("hello");
+        null;
       } else {
-        console.log(filterBox);
-        if (filterBox.style.display != "none") {
-          console.log('comn');
+        if (filterBox.style.display !== "none") {
           filterBox.style.display = "none";
         }
       }
     });
-  }, []);
+  }, [countries]);
 
   return (
     <>
       <CountryData.Provider value={[countries, setCurrentCards]}>
         {/* Header Section */}
         <header>
-          <NavBar />
+          <NavBar theme={theme} setTheme={setTheme}/>
         </header>
         {/* Main Body */}
         {/* <Home currentCards={currentCards} /> */}

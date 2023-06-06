@@ -1,17 +1,19 @@
 import { useContext, useRef, useState } from "react";
 import CountryData from "../context/CountryData";
+import { RiArrowDropUpLine, RiArrowDropDownLine } from "react-icons/ri";
 
 const FilterBox = () => {
   const [mainData, updateUI] = useContext(CountryData);
   const [filterKeyWord, setFilterKeyWord] = useState("");
+  const [datalistShow, setDataListShow] = useState(false);
   const filter = useRef(null);
   const dataList = useRef(null);
 
   const handleOptionClick = (e) => {
-    // dataList.current.preventDefault()
+    setDataListShow(false);
     dataList.current.style.display = "none";
     filter.current.value = e.target.value;
-    setFilterKeyWord( e.target.value)
+    setFilterKeyWord(e.target.value);
 
     const result = mainData.filter((country) => {
       if (country.region.toLowerCase() === filter.current.value.toLowerCase()) {
@@ -27,10 +29,11 @@ const FilterBox = () => {
   };
 
   const handleInputClick = () => {
+    setDataListShow(true);
     dataList.current.style.display = "flex";
   };
   return (
-    <div className="navigation__filterbox bg-card pos-rel">
+    <div className="navigation__filterbox bg-card pos-rel flex">
       <input
         list=""
         onClick={handleInputClick}
@@ -42,7 +45,10 @@ const FilterBox = () => {
         placeholder="Filter by Region"
         value={filterKeyWord}
       />
-      <datalist
+      <span>
+        {datalistShow ? <RiArrowDropUpLine fill="white" /> : <RiArrowDropDownLine fill="white"/>}
+      </span>
+      <dataList
         ref={dataList}
         className="navigation__datalist pos-abs bg-card flex"
         id="region"
@@ -57,7 +63,7 @@ const FilterBox = () => {
         <option
           onClick={handleOptionClick}
           className="text-accent-200 fw-100 navigation__option"
-          value="America"
+          value="Americas"
         >
           Americas
         </option>
@@ -82,7 +88,7 @@ const FilterBox = () => {
         >
           Oceania
         </option>
-      </datalist>
+      </dataList>
     </div>
   );
 };

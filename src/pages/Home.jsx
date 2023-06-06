@@ -2,11 +2,12 @@
 import SearchBar from "../components/SearchBar";
 import FilterBox from "../components/FilterBox";
 import Card from "../components/Card";
-const Home = ({ currentCards }) => {
+
+const Home = ({ currentCards, theme }) => {
   return (
     <main className="main">
       <div className="main__navigation navigation flex">
-        <SearchBar />
+        <SearchBar theme={theme} />
         <FilterBox />
       </div>
       <div className="container-card grid">

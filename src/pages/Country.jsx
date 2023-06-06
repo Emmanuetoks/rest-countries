@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import CountryData from "../context/CountryData";
 
-const Country = () => {
+const Country = ({ theme }) => {
+  const [allCountries] = useContext(CountryData);
   const [mainData, setMainData] = useState(null);
   const { id } = useParams();
   let languages = [];
   let currencies = [];
-  console.log(mainData);
   let nativeName = [];
+  let borderCountries = [];
 
-  Promise.all()
   useEffect(() => {
     (async function () {
       try {
@@ -29,8 +31,9 @@ const Country = () => {
     let langData = mainData[0].languages;
     let curData = mainData[0].currencies;
     let natData = mainData[0].name.nativeName;
+    let borderData = mainData[0]?.borders;
+
     for (const key in langData) {
-      console.log(langData[key]);
       languages.push(langData[key]);
     }
 
@@ -41,13 +44,31 @@ const Country = () => {
     for (const key in natData) {
       nativeName.push(natData[key].official);
     }
+
+    if (borderData) {
+      allCountries &&
+        allCountries.forEach((element) => {
+          if (borderData.includes(element.alpha3Code)) {
+            borderCountries.push(element.name);
+            console.log(element.name);
+          }
+        });
+    } else {
+      borderCountries.push("No Border Countries");
+    }
   }
+
   return (
     mainData && (
       <main className="main--country main grid">
         <div className="main__navigation navigation">
           <Link to={"/"}>
-            <button className="main__back-button bg-card capitalize text-accent-200 fw-100">
+            <button className="main--country__back-button bg-card capitalize text-accent-200 fw-100 flex">
+              {theme === "dark" ? (
+                <AiOutlineArrowLeft fill="white" />
+              ) : (
+                <AiOutlineArrowLeft />
+              )}
               back
             </button>
           </Link>
@@ -132,9 +153,14 @@ const Country = () => {
             <div className="main--country__info-footer flex">
               <p className="text-accent-200 fw-100">Border Countries: </p>
               <div className="main--country__border-countries flex">
-                <p className="bg-card main--country__border-country text-accent-100 fw-100">
-                  France
-                </p>
+                {borderCountries.map((borderCountry) => (
+                  <p
+                    className="bg-card main--country__border-country text-accent-100 fw-100"
+                    key={borderCountry}
+                  >
+                    {borderCountry}
+                  </p>
+                ))}
               </div>
             </div>
           </figcaption>
