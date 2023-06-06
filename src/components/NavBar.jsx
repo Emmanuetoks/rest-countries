@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import { BsMoon, BsMoonFill } from "react-icons/bs";
 
 const NavBar = ({theme, setTheme}) => {
