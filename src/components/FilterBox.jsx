@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useContext, useRef, useState } from "react";
 import CountryData from "../context/CountryData";
 import { RiArrowDropUpLine, RiArrowDropDownLine } from "react-icons/ri";
 
-const FilterBox = () => {
+const FilterBox = ({theme}) => {
   const [mainData, updateUI] = useContext(CountryData);
   const [filterKeyWord, setFilterKeyWord] = useState("");
   const [datalistShow, setDataListShow] = useState(false);
@@ -46,7 +47,7 @@ const FilterBox = () => {
         value={filterKeyWord}
       />
       <span>
-        {datalistShow ? <RiArrowDropUpLine fill="white" /> : <RiArrowDropDownLine fill="white"/>}
+        {datalistShow ? theme==='dark'?<RiArrowDropUpLine fill="white" />:<RiArrowDropUpLine/> : theme !== 'dark' ? <RiArrowDropDownLine fill/>: <RiArrowDropDownLine fill="white"/>}
       </span>
       <dataList
         ref={dataList}

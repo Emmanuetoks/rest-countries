@@ -8,7 +8,7 @@ const Home = ({ currentCards, theme }) => {
     <main className="main">
       <div className="main__navigation navigation flex">
         <SearchBar theme={theme} />
-        <FilterBox />
+        <FilterBox theme={theme}/>
       </div>
       <div className="container-card grid">
         {currentCards &&

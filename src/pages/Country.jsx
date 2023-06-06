@@ -84,35 +84,35 @@ const Country = ({ theme }) => {
             </h2>
             <div className="main--country__info flex">
               <div className="main--country__main-info ">
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Native Name:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {nativeName[0]}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Population:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {mainData[0].population}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Region:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {mainData[0].region}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Sub Region:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {mainData[0].subregion}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Capital:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
@@ -122,21 +122,21 @@ const Country = ({ theme }) => {
               </div>
 
               <div className="main--country__other-info">
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Top Level Domain:{" "}
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {mainData[0].tld[0]}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Currencies:
                   <span className="text-accent-100 fw-100">
                     {" "}
                     {currencies.map((currency) => currency.name)}
                   </span>
                 </p>
-                <p className="text-accent-200 fw-100">
+                <p className="text-accent-200 fw-200">
                   Languages:{" "}
                   {languages?.map((lang) => (
                     <span
@@ -151,7 +151,7 @@ const Country = ({ theme }) => {
             </div>
 
             <div className="main--country__info-footer flex">
-              <p className="text-accent-200 fw-100">Border Countries: </p>
+              <p className="text-accent-200 fw-200">Border Countries: </p>
               <div className="main--country__border-countries flex">
                 {borderCountries.map((borderCountry) => (
                   <p
