@@ -12,7 +12,7 @@ const Card = ({
     <Link to={`/country/${id}`}>
       <figure className="card bg-card">
         <div className="container-flag card__section">
-        <img src={image} />
+        <img src={image} alt={name + ' flag'}/>
       </div>
 
         <figcaption className="card__section card__caption flex">
