@@ -31,7 +31,12 @@ const FilterBox = ({theme}) => {
 
   const handleInputClick = () => {
     setDataListShow(true);
-    dataList.current.style.display = "flex";
+    if (dataList.current.style.display === "flex") {
+      dataList.current.style.display = 'none'
+    } else {
+      dataList.current.style.display = 'flex'
+    }
+    
   };
   return (
     <div className="navigation__filterbox bg-card pos-rel flex">
@@ -42,7 +47,7 @@ const FilterBox = ({theme}) => {
         onInput={() => (filter.current.value = "")}
         id="filterInput"
         ref={filter}
-        className="text-accent-200 navigation__input fw-100"
+        className="text-accent-200 navigation__input fw-200"
         placeholder="Filter by Region"
         value={filterKeyWord}
       />

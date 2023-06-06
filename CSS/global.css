@@ -127,6 +127,7 @@ a {
   border-radius: 5px;
   align-items: center;
   padding-inline-end: 1rem;
+  z-index: 1;
 }
 
 .navigation__searchbar {
@@ -158,16 +159,21 @@ a {
 
 /*--- Card Styling ---*/
 .container-card {
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
   place-items: center;
 }
 
 .card {
   border-radius: 5px;
-  max-width: 18rem;
-  /* height: 20rem; */
+  max-width: 15rem;
   aspect-ratio: 0.8 / 1;
+  transition: transform;
+  transition-duration: 1000ms;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card__section {
@@ -245,6 +251,7 @@ a {
   cursor: pointer;
   gap: 1rem;
   padding: 0.5rem 1.5rem;
+  border-radius: 5px;
 }
 
 .main--country__info-footer {
