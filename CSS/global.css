@@ -197,9 +197,6 @@ a {
 
 /* Country Page */
 
-.main--country {
-}
-
 .main--country__card {
   margin-top: 4rem;
   grid-template-columns: 1fr 1fr;
