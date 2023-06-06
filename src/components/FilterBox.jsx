@@ -8,8 +8,10 @@ const FilterBox = () => {
   const dataList = useRef(null);
 
   const handleOptionClick = (e) => {
+    // dataList.current.preventDefault()
     dataList.current.style.display = "none";
     filter.current.value = e.target.value;
+    setFilterKeyWord( e.target.value)
 
     const result = mainData.filter((country) => {
       if (country.region.toLowerCase() === filter.current.value.toLowerCase()) {

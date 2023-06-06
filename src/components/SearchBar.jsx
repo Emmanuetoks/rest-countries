@@ -4,7 +4,6 @@ import CountryData from "../context/CountryData";
 const SearchBar = () => {
   const [mainData, updateCard] = useContext(CountryData);
   const [searchKey, setSearchKey] = useState("");
-
     /**
      * mainData is the list containing all the data
      * 
@@ -15,7 +14,7 @@ const SearchBar = () => {
     const myRegex = /[A-Za-z]/;
     if (myRegex.test(value)) {
       const result = mainData.filter((country) => {
-        if (country.name.toLocaleLowerCase().startsWith(value)) {
+        if (country.name.toLocaleLowerCase().includes(value)) {
           return true;
         }
       });

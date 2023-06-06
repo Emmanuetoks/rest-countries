@@ -20,7 +20,7 @@
 }
 
 .dark-mode .text-accent-200 {
-  color: var(--clr-neutral-100);
+  color: var(--clr-primary-100);
 }
 
 .dark-mode .bg-card {
