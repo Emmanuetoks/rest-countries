@@ -272,6 +272,9 @@ a {
 
 
 @media (max-width: 1200px) {
+  .navbar{
+    padding-inline: 0.8rem;
+}
   .main--country__card {
     grid-template-columns: 1fr;
     max-width: 40rem;
