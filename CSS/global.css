@@ -221,6 +221,8 @@ a {
     flex-direction: column;
     gap: 3rem;
   }
+main--country__border-countries{
+ flex-direction: column;
 }
 
 .main--country__caption {
