@@ -50,7 +50,6 @@ const Country = ({ theme }) => {
         allCountries.forEach((element) => {
           if (borderData.includes(element.alpha3Code)) {
             borderCountries.push(element.name);
-            console.log(element.name);
           }
         });
     } else {

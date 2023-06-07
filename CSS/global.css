@@ -64,10 +64,12 @@ a {
 
 .fw-200 {
   font-weight: var(--fw-200);
+  font-size: 1rem;
 }
 
 .fw-300 {
   font-weight: var(--fw-300);
+  font-size: calc(1vw + 1rem);
 }
 
 .capitalize {
@@ -210,24 +212,7 @@ a {
   width: 100%;
 }
 
-@media (max-width: 1200px) {
-  .main--country__card {
-    grid-template-columns: 1fr;
-    max-width: 40rem;
-    place-self: center;
-  }
 
-  .main--country__info {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-.main--country__info-footer {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-}
 
 .main--country__caption {
   flex-direction: column;
@@ -284,4 +269,24 @@ a {
   width: 100%;
   aspect-ratio: 1 / 0.6;
   object-fit: cover;
+}
+
+
+@media (max-width: 1200px) {
+  .main--country__card {
+    grid-template-columns: 1fr;
+    max-width: 40rem;
+    place-self: center;
+  }
+
+  .main--country__info {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+.main--country__info-footer {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 }
