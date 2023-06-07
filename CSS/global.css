@@ -221,13 +221,12 @@ a {
     flex-direction: column;
     gap: 3rem;
   }
-main--country__border-countries{
- flex-direction: column;
-}
 
 .main--country__info-footer {
   flex-direction: column;
+  align-items: flex-start;
 }
+
 }
 
 .main--country__caption {
