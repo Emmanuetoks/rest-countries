@@ -225,6 +225,11 @@ main--country__border-countries{
  flex-direction: column;
 }
 
+.main--country__info-footer {
+  flex-direction: column;
+}
+}
+
 .main--country__caption {
   flex-direction: column;
   padding-block: 2rem;
@@ -259,6 +264,7 @@ main--country__border-countries{
 .main--country__info-footer {
   gap: 1rem;
   align-items: center;
+  
 }
 
 .main--country__border-countries {
